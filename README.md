@@ -2,7 +2,9 @@
 
 
 Yup.
+
 It's a plugin for showing the a TenBis button - inside the toolbar of your favorite JetBrains IDE.
+
 Order your food right from your IDE!
 
 
