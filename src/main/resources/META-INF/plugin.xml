@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>com.fimaworks.jetbrains-10bis-plugin</id>
+    <name>TenBis Food Delivery Button for Jetbrains</name>
+
+    <vendor email="personalspace@nadavfima.com">Fima</vendor>
+
+    <description><![CDATA[
+    Hungry developer in TLV?
+    </br>
+    Use this plugin to instanly open TenBis (10bis.co.il) on your browser instanly!
+    ]]></description>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <actions>
+
+        <action id="OrderFood" class="com.fimaworks.jetbrains.tenbis.OrderFoodAction"
+                text="Order Food!"
+                icon="ic_tenbis.png">
+
+            <add-to-group group-id="ToolbarRunGroup" anchor="last"/>
+        </action>
+
+    </actions>
+</idea-plugin>
