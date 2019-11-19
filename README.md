@@ -4,6 +4,7 @@
 Yup.
 
 It's a plugin for showing the a TenBis button - inside the toolbar of your favorite JetBrains IDE.
+
 Clicking the button opens 10bis.co.il in your default browser.
 
 
