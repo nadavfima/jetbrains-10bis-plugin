@@ -5,7 +5,7 @@ Yup.
 
 It's a plugin for showing the a TenBis button - inside the toolbar of your favorite JetBrains IDE.
 
-Order your food right from your IDE!
+Clicking the button opens 10bis.co.il in your default browser.
 
 
 ### Installation Instructions
@@ -25,5 +25,5 @@ Coming Soon!
 - [ ] Submit to JetBrains Repo
 - [ ] Add Installation Instructions
 
-### V2
+### V2?
 - [ ] 11:30 Reminder
