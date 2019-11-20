@@ -8,6 +8,13 @@ It's a plugin for showing the a TenBis button - inside the toolbar of your favor
 Clicking the button opens 10bis.co.il in your default browser.
 
 
+### Todos
+- [x] Push to Git
+- [x] Submit to JetBrains Repo
+- [ ] Add Installation Instructions
+- [ ] Order Food Reminder
+
+
 ### Installation Instructions
 Coming Soon!
 
@@ -18,12 +25,3 @@ Coming Soon!
 
 ### Dracula Theme
 ![Dracula Theme](readme/screenshot_dracula.png)
-
-
-### Todos
-- [x] Push to Git
-- [ ] Submit to JetBrains Repo
-- [ ] Add Installation Instructions
-
-### V2?
-- [ ] 11:30 Reminder
