@@ -10,8 +10,7 @@ import java.util.concurrent.TimeUnit
 
 class ReminderComponent : BaseComponent {
 
-    // todo - need to save last reminder so we don't popup everytime the user launches IntelliJ
-    private var lastReminder = LocalDateTime.now().minusDays(1)
+    private var lastReminder = ReminderConfigurationProvider.instance.state.lastReminder
 
     private val timer = Timer("10bis_reminder_timer")
 
@@ -20,6 +19,8 @@ class ReminderComponent : BaseComponent {
             LastReminderListener {
             override fun updateLastReminder(now: LocalDateTime) {
                 this@ReminderComponent.lastReminder = now
+                ReminderConfigurationProvider.instance.state.lastReminder = now
+
             }
 
             override val lastReminder: LocalDateTime
@@ -48,10 +49,10 @@ class ReminderComponent : BaseComponent {
 
             val isRemindedForToday = lastReminderListener.lastReminder.isToday()
 
-            // todo - make this configurable
+            val configState = ReminderConfigurationProvider.instance.state
 
-            val reminderHour = 11
-            val reminderMinutes = 0
+            val reminderHour = configState.reminderHour
+            val reminderMinutes = configState.reminderMinutes
 
             val isAfterReminderTime = LocalDateTime.now().isAfter(reminderHour, reminderMinutes)
 
