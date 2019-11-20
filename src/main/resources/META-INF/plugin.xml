@@ -22,4 +22,11 @@
         </action>
 
     </actions>
+
+    <application-components>
+        <component>
+            <implementation-class>com.fimaworks.jetbrains.tenbis.reminder.ReminderComponent</implementation-class>
+        </component>
+    </application-components>
+
 </idea-plugin>
