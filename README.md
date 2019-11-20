@@ -1,4 +1,4 @@
-# jetbrains-10bis-plugin
+# 10bis (TenBis) Plugin for All Jetbrains IDEs
 
 
 Yup.
