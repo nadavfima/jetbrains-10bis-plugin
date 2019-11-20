@@ -20,10 +20,12 @@ Coming Soon!
 ![Dracula Theme](readme/screenshot_dracula.png)
 
 
+### Order Reminder
+![Dracula Theme](readme/screenshot_reminder.png)
+
+
+
 ### Todos
 - [x] Push to Git
 - [ ] Submit to JetBrains Repo
 - [ ] Add Installation Instructions
-
-### V2?
-- [ ] 11:30 Reminder
