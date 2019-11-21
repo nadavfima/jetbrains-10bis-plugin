@@ -7,7 +7,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 class OrderFoodAction : AnAction() {
     override fun actionPerformed(p0: AnActionEvent) {
         // doesn't get any simpler than this
-        BrowserUtil.browse("https://www.10bis.co.il/")
+        BrowserUtil.browse(Constants.browserUrl)
     }
 
+    // should the button be hidden after the order was made?
+    override fun update(e: AnActionEvent) {
+        super.update(e)
+    }
 }
