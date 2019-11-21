@@ -8,6 +8,7 @@
     Hungry developer in TLV?
     </br>
     Use this plugin to instanly open TenBis (10bis.co.il) on your browser instanly!
+    Also has a daily reminder feature to order your lunch.
     ]]></description>
 
     <depends>com.intellij.modules.lang</depends>
