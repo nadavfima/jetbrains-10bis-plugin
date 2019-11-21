@@ -1,4 +1,4 @@
-# jetbrains-10bis-plugin
+# TenBis (10bis) Plugin for All Jetbrains IDEs
 
 
 Yup.
@@ -6,6 +6,13 @@ Yup.
 It's a plugin for showing the a TenBis button - inside the toolbar of your favorite JetBrains IDE.
 
 Clicking the button opens 10bis.co.il in your default browser.
+
+
+### Todos
+- [x] Push to Git
+- [x] Submit to JetBrains Repo
+- [x] Order Food Reminder
+- [ ] Add Installation Instructions
 
 
 ### Installation Instructions
@@ -22,10 +29,3 @@ Coming Soon!
 
 ### Order Reminder
 ![Dracula Theme](readme/screenshot_reminder.png)
-
-
-
-### Todos
-- [x] Push to Git
-- [ ] Submit to JetBrains Repo
-- [ ] Add Installation Instructions
