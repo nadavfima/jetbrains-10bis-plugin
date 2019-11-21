@@ -4,13 +4,14 @@ import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
+import com.intellij.util.xmlb.XmlSerializerUtil
 import java.time.LocalDateTime
 
 @State(
     name = "ReminderConfigurationProvider",
     storages = [Storage("10bis-plugin.xml")]
 )
-class ReminderConfigurationProvider : PersistentStateComponent<ReminderConfigurationProvider.ConfigurationState> {
+open class ReminderConfigurationProvider : PersistentStateComponent<ReminderConfigurationProvider.ConfigurationState> {
 
     private var myState: ConfigurationState = ConfigurationState()
 

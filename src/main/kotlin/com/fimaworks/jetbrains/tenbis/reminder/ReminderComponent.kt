@@ -30,11 +30,16 @@ class ReminderComponent : BaseComponent {
     override fun initComponent() {
         super.initComponent()
 
-        // schedule task every 1 minute
+        // delay first trigger by 15 seconds
+        val initialDelayInMillis = TimeUnit.SECONDS.toMillis(15)
+
+        // schedule task every 30 seconds
+        val periodInMillis = TimeUnit.SECONDS.toMillis(30)
+
         timer.schedule(
             timerTask,
-            Date(System.currentTimeMillis()),
-            TimeUnit.MINUTES.toMillis(1)
+            Date(System.currentTimeMillis() + initialDelayInMillis),
+            periodInMillis
         )
     }
 
@@ -58,13 +63,11 @@ class ReminderComponent : BaseComponent {
 
             if (isRemindedForToday.not() && isAfterReminderTime) {
 
-                // todo - add sound?
+                // todo - add notification sound?
 
                 // ui notification
-                ReminderNotification.remindUser()
+                ReminderNotification.notifyUser(lastReminderListener)
 
-                // update last reminder to now
-                lastReminderListener.updateLastReminder(LocalDateTime.now())
             }
         }
     }

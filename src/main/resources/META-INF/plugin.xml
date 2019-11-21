@@ -23,10 +23,23 @@
 
     </actions>
 
+
     <application-components>
         <component>
             <implementation-class>com.fimaworks.jetbrains.tenbis.reminder.ReminderComponent</implementation-class>
         </component>
     </application-components>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <applicationConfigurable instance="com.fimaworks.jetbrains.tenbis.reminder.ReminderConfigurable"
+                                 id="fimaworks.10bis" displayName="10bis"/>
+
+
+        <applicationService
+                serviceInterface="com.fimaworks.jetbrains.tenbis.reminder.ReminderConfigurationProvider"
+                serviceImplementation="com.fimaworks.jetbrains.tenbis.reminder.ReminderConfigurationProvider"/>
+
+    </extensions>
 
 </idea-plugin>
