@@ -10,22 +10,9 @@ import java.util.concurrent.TimeUnit
 
 class ReminderComponent : BaseComponent {
 
-    private var lastReminder = ReminderConfigurationProvider.instance.state.lastReminder
-
     private val timer = Timer("10bis_reminder_timer")
 
-    private val timerTask =
-        ReminderTimerTask(object :
-            LastReminderListener {
-            override fun updateLastReminder(now: LocalDateTime) {
-                this@ReminderComponent.lastReminder = now
-                ReminderConfigurationProvider.instance.state.lastReminder = now
-
-            }
-
-            override val lastReminder: LocalDateTime
-                get() = this@ReminderComponent.lastReminder
-        })
+    private val timerTask = ReminderTimerTask()
 
     override fun initComponent() {
         super.initComponent()
@@ -49,16 +36,15 @@ class ReminderComponent : BaseComponent {
         super.disposeComponent()
     }
 
-    class ReminderTimerTask(private val lastReminderListener: LastReminderListener) : TimerTask() {
+    class ReminderTimerTask : TimerTask() {
         override fun run() {
-
-            val isRemindedForToday = lastReminderListener.lastReminder.isToday()
 
             val configState = ReminderConfigurationProvider.instance.state
 
             val reminderHour = configState.reminderHour
             val reminderMinutes = configState.reminderMinutes
 
+            val isRemindedForToday = configState.lastReminder.isToday()
             val isAfterReminderTime = LocalDateTime.now().isAfter(reminderHour, reminderMinutes)
 
             if (isRemindedForToday.not() && isAfterReminderTime) {
@@ -66,15 +52,9 @@ class ReminderComponent : BaseComponent {
                 // todo - add notification sound?
 
                 // ui notification
-                ReminderNotification.notifyUser(lastReminderListener)
+                ReminderNotification.notifyUser()
 
             }
         }
-    }
-
-    interface LastReminderListener {
-        fun updateLastReminder(now: LocalDateTime)
-
-        val lastReminder: LocalDateTime
     }
 }

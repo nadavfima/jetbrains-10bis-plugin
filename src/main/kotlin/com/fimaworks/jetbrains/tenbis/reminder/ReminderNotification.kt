@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 
 object ReminderNotification {
 
-    fun notifyUser(lastReminderListener: ReminderComponent.LastReminderListener) {
+    fun notifyUser() {
         // prep message
         val message = escapeString(
             // order button
@@ -38,7 +38,7 @@ object ReminderNotification {
 
         notification.whenExpired {
             // update last reminder to now
-            lastReminderListener.updateLastReminder(LocalDateTime.now())
+            ReminderConfigurationProvider.instance.state.lastReminder = LocalDateTime.now()
         }
 
         // ping user
