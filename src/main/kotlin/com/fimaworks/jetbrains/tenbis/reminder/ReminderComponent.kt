@@ -36,7 +36,7 @@ class ReminderComponent : BaseComponent {
         super.disposeComponent()
     }
 
-    class ReminderTimerTask : TimerTask() {
+    private class ReminderTimerTask : TimerTask() {
         override fun run() {
 
             val configState = ReminderConfigurationProvider.instance.state
