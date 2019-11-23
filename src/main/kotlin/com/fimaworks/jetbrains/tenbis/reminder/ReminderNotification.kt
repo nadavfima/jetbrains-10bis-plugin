@@ -47,6 +47,7 @@ object ReminderNotification {
         notification.notify(null)
     }
 
+    // notice how we basically convert Java's newline format to HTML's newline format
     private fun escapeString(string: String?): String? {
         return if (string == null || !string.contains("\n")) {
             string

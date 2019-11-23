@@ -14,7 +14,7 @@
     <depends>com.intellij.modules.lang</depends>
 
     <actions>
-
+        <!-- toolbar action button -->
         <action id="OrderFood" class="com.fimaworks.jetbrains.tenbis.OrderFoodAction"
                 text="Order Food!"
                 icon="ic_tenbis.png">
@@ -24,7 +24,7 @@
 
     </actions>
 
-
+    <!-- application level components -->
     <application-components>
         <component>
             <implementation-class>com.fimaworks.jetbrains.tenbis.reminder.ReminderComponent</implementation-class>
@@ -33,10 +33,12 @@
 
     <extensions defaultExtensionNs="com.intellij">
 
+        <!-- the persistent state configurable ui -->
         <applicationConfigurable instance="com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateConfigurable"
                                  id="fimaworks.10bis" displayName="10bis"/>
 
 
+        <!-- the persistent state service-->
         <applicationService
                 serviceInterface="com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateComponent"
                 serviceImplementation="com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateComponent"/>
