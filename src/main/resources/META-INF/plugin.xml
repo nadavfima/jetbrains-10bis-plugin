@@ -7,13 +7,14 @@
     <description><![CDATA[
     Hungry developer in TLV?
     </br>
-    Use this plugin to instanly open TenBis (10bis.co.il) on your browser instanly!
+    Use this plugin to instantly open TenBis (10bis.co.il) on your browser instanly!
+    Also has a daily reminder feature to order your lunch.
     ]]></description>
 
     <depends>com.intellij.modules.lang</depends>
 
     <actions>
-
+        <!-- toolbar action button -->
         <action id="OrderFood" class="com.fimaworks.jetbrains.tenbis.OrderFoodAction"
                 text="Order Food!"
                 icon="ic_tenbis.png">
@@ -23,7 +24,7 @@
 
     </actions>
 
-
+    <!-- application level components -->
     <application-components>
         <component>
             <implementation-class>com.fimaworks.jetbrains.tenbis.reminder.ReminderComponent</implementation-class>
@@ -32,13 +33,15 @@
 
     <extensions defaultExtensionNs="com.intellij">
 
-        <applicationConfigurable instance="com.fimaworks.jetbrains.tenbis.reminder.ReminderConfigurable"
+        <!-- the persistent state configurable ui -->
+        <applicationConfigurable instance="com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateConfigurable"
                                  id="fimaworks.10bis" displayName="10bis"/>
 
 
+        <!-- the persistent state service-->
         <applicationService
-                serviceInterface="com.fimaworks.jetbrains.tenbis.reminder.ReminderConfigurationProvider"
-                serviceImplementation="com.fimaworks.jetbrains.tenbis.reminder.ReminderConfigurationProvider"/>
+                serviceInterface="com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateComponent"
+                serviceImplementation="com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateComponent"/>
 
     </extensions>
 

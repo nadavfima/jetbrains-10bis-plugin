@@ -1,4 +1,4 @@
-package com.fimaworks.jetbrains.tenbis.extensions
+package com.fimaworks.jetbrains.tenbis.utils
 
 import java.time.LocalDateTime
 import java.time.ZoneOffset
