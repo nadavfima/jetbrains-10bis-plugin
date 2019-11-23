@@ -38,8 +38,8 @@
 
 
         <applicationService
-                serviceInterface="com.fimaworks.jetbrains.tenbis.reminder.ReminderConfigurationProvider"
-                serviceImplementation="com.fimaworks.jetbrains.tenbis.reminder.ReminderConfigurationProvider"/>
+                serviceInterface="com.fimaworks.jetbrains.tenbis.reminder.ReminderPersistentStateComponent"
+                serviceImplementation="com.fimaworks.jetbrains.tenbis.reminder.ReminderPersistentStateComponent"/>
 
     </extensions>
 

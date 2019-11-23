@@ -1,9 +1,6 @@
 package com.fimaworks.jetbrains.tenbis.reminder
 
-import com.fimaworks.jetbrains.tenbis.extensions.isAfter
-import com.fimaworks.jetbrains.tenbis.extensions.isToday
 import com.intellij.openapi.components.BaseComponent
-import java.time.LocalDateTime
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -23,6 +20,7 @@ class ReminderComponent : BaseComponent {
         // schedule task every 30 seconds
         val periodInMillis = TimeUnit.SECONDS.toMillis(30)
 
+        // schedule when the component is initiated
         timer.schedule(
             timerTask,
             Date(System.currentTimeMillis() + initialDelayInMillis),
@@ -31,30 +29,9 @@ class ReminderComponent : BaseComponent {
     }
 
     override fun disposeComponent() {
+        // cancel the time when disposed
         timerTask.cancel()
         timer.cancel()
         super.disposeComponent()
-    }
-
-    private class ReminderTimerTask : TimerTask() {
-        override fun run() {
-
-            val configState = ReminderConfigurationProvider.instance.state
-
-            val reminderHour = configState.reminderHour
-            val reminderMinutes = configState.reminderMinutes
-
-            val isRemindedForToday = configState.lastReminder.isToday()
-            val isAfterReminderTime = LocalDateTime.now().isAfter(reminderHour, reminderMinutes)
-
-            if (isRemindedForToday.not() && isAfterReminderTime) {
-
-                // todo - add notification sound?
-
-                // ui notification
-                ReminderNotification.notifyUser()
-
-            }
-        }
     }
 }

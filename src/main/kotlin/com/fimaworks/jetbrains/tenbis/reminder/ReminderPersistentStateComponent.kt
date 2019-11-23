@@ -4,14 +4,13 @@ import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
-import com.intellij.util.xmlb.XmlSerializerUtil
 import java.time.LocalDateTime
 
 @State(
-    name = "ReminderConfigurationProvider",
+    name = "ReminderPersistentStateComponent",
     storages = [Storage("10bis-plugin.xml")]
 )
-open class ReminderConfigurationProvider : PersistentStateComponent<ReminderConfigurationProvider.ConfigurationState> {
+open class ReminderPersistentStateComponent : PersistentStateComponent<ReminderPersistentStateComponent.ConfigurationState> {
 
     private var myState: ConfigurationState = ConfigurationState()
 
@@ -30,7 +29,7 @@ open class ReminderConfigurationProvider : PersistentStateComponent<ReminderConf
     }
 
     companion object {
-        val instance: ReminderConfigurationProvider
-            get() = ServiceManager.getService(ReminderConfigurationProvider::class.java)
+        val instance: ReminderPersistentStateComponent
+            get() = ServiceManager.getService(ReminderPersistentStateComponent::class.java)
     }
 }

@@ -38,7 +38,7 @@ object ReminderNotification {
 
         notification.whenExpired {
             // update last reminder to now
-            ReminderConfigurationProvider.instance.state.lastReminder = LocalDateTime.now()
+            ReminderPersistentStateComponent.instance.state.lastReminder = LocalDateTime.now()
         }
 
         // ping user

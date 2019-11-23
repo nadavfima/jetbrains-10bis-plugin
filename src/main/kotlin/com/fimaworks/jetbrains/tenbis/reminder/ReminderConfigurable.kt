@@ -22,7 +22,7 @@ class ReminderConfigurable : Configurable, NoScroll, Disposable {
         it.allowsInvalid = true
     }
     private val configState
-        get() = ReminderConfigurationProvider.instance.state
+        get() = ReminderPersistentStateComponent.instance.state
 
     // ui
     private var hourField: JFormattedTextField? =
