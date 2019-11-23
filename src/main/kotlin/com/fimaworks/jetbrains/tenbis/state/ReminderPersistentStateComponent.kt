@@ -1,4 +1,4 @@
-package com.fimaworks.jetbrains.tenbis.reminder
+package com.fimaworks.jetbrains.tenbis.state
 
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.ServiceManager
@@ -12,7 +12,8 @@ import java.time.LocalDateTime
 )
 open class ReminderPersistentStateComponent : PersistentStateComponent<ReminderPersistentStateComponent.ConfigurationState> {
 
-    private var myState: ConfigurationState = ConfigurationState()
+    private var myState: ConfigurationState =
+        ConfigurationState()
 
     override fun getState(): ConfigurationState {
         return myState

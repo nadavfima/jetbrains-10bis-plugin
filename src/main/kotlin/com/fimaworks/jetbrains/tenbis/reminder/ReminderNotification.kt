@@ -1,6 +1,7 @@
 package com.fimaworks.jetbrains.tenbis.reminder
 
 import com.fimaworks.jetbrains.tenbis.Constants
+import com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateComponent
 import com.intellij.ide.BrowserUtil
 import com.intellij.notification.*
 import java.time.LocalDateTime

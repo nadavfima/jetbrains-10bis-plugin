@@ -1,6 +1,7 @@
 package com.fimaworks.jetbrains.tenbis.reminder
 
 import com.fimaworks.jetbrains.tenbis.extensions.*
+import com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateComponent
 import java.time.LocalDateTime
 import java.util.*
 

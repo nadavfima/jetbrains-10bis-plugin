@@ -1,4 +1,4 @@
-package com.fimaworks.jetbrains.tenbis.reminder
+package com.fimaworks.jetbrains.tenbis.state
 
 import com.intellij.openapi.Disposable
 import com.intellij.openapi.options.Configurable
@@ -8,7 +8,7 @@ import javax.swing.*
 import javax.swing.text.NumberFormatter
 
 
-class ReminderConfigurable : Configurable, NoScroll, Disposable {
+class ReminderPersistentStateConfigurable : Configurable, NoScroll, Disposable {
 
     private val hourFormatter = NumberFormatter(NumberFormat.getIntegerInstance()).also {
         it.minimum = 0

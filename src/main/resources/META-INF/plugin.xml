@@ -33,13 +33,13 @@
 
     <extensions defaultExtensionNs="com.intellij">
 
-        <applicationConfigurable instance="com.fimaworks.jetbrains.tenbis.reminder.ReminderConfigurable"
+        <applicationConfigurable instance="com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateConfigurable"
                                  id="fimaworks.10bis" displayName="10bis"/>
 
 
         <applicationService
-                serviceInterface="com.fimaworks.jetbrains.tenbis.reminder.ReminderPersistentStateComponent"
-                serviceImplementation="com.fimaworks.jetbrains.tenbis.reminder.ReminderPersistentStateComponent"/>
+                serviceInterface="com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateComponent"
+                serviceImplementation="com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateComponent"/>
 
     </extensions>
 
