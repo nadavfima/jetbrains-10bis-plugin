@@ -10,20 +10,19 @@ import java.time.LocalDateTime
     name = "ReminderPersistentStateComponent",
     storages = [Storage("10bis-plugin.xml")]
 )
-open class ReminderPersistentStateComponent : PersistentStateComponent<ReminderPersistentStateComponent.ConfigurationState> {
+open class ReminderPersistentStateComponent : PersistentStateComponent<ReminderPersistentStateComponent.ReminderState> {
 
-    private var myState: ConfigurationState =
-        ConfigurationState()
+    private var reminderState: ReminderState = ReminderState()
 
-    override fun getState(): ConfigurationState {
-        return myState
+    override fun getState(): ReminderState {
+        return reminderState
     }
 
-    override fun loadState(state: ConfigurationState) {
-        myState = state
+    override fun loadState(state: ReminderState) {
+        reminderState = state
     }
 
-    class ConfigurationState {
+    class ReminderState {
         var lastReminder: LocalDateTime = LocalDateTime.now().minusDays(1)
         var reminderHour = 11
         var reminderMinutes = 0
