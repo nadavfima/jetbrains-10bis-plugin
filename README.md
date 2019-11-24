@@ -12,11 +12,12 @@ Clicking the button opens 10bis.co.il in your default browser.
 - [x] Push to Git
 - [x] Submit to JetBrains Repo
 - [x] Order Food Reminder
+- [x] User Configurations
 - [ ] Add Installation Instructions
 
 
 ### Installation Instructions
-Coming Soon!
+Search for TenBis in the IntelliJ Plugins Marketplace inside your IDE or your browser.
 
 
 ### Light Theme
