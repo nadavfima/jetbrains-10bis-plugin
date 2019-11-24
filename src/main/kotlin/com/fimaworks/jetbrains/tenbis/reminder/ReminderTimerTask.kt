@@ -11,6 +11,9 @@ class ReminderTimerTask : TimerTask() {
         // get the persistent state
         val configState = ReminderPersistentStateComponent.instance.state
 
+        // if user doesn't want reminders - let's not add them
+        if (configState.showReminders.not()) return
+
         // check the time
         val reminderHour = configState.reminderHour
         val reminderMinutes = configState.reminderMinutes
