@@ -1,5 +1,6 @@
 package com.fimaworks.jetbrains.tenbis
 
+import com.fimaworks.jetbrains.tenbis.state.ReminderPersistentStateComponent
 import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -13,5 +14,7 @@ class OrderFoodAction : AnAction() {
     // should the button be hidden after the order was made?
     override fun update(e: AnActionEvent) {
         super.update(e)
+
+        e.presentation.isVisible = ReminderPersistentStateComponent.instance.state.showToolbarIcon
     }
 }

@@ -34,9 +34,17 @@ open class ReminderPersistentStateComponent : PersistentStateComponent<ReminderP
 
     // the POKO class that always keeps our state
     class ReminderState {
-        var lastReminder: LocalDateTime = LocalDateTime.now().minusDays(1)
+
+        // should show the orange icon?
+        var showToolbarIcon = true
+
+        // reminders
+        var showReminders = true
         var reminderHour = 11
         var reminderMinutes = 0
+
+        // non-configurable
+        var lastReminder: LocalDateTime = LocalDateTime.now().minusDays(1)
     }
 
 }
