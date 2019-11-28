@@ -13,6 +13,7 @@ import javax.swing.text.NumberFormatter
 
 class ReminderPersistentStateConfigurable : Configurable, NoScroll, Disposable {
 
+    // configurations for the text fields
     private val hourFormatter = NumberFormatter(NumberFormat.getIntegerInstance()).also {
         it.minimum = 0
         it.maximum = 23
@@ -24,6 +25,8 @@ class ReminderPersistentStateConfigurable : Configurable, NoScroll, Disposable {
         it.maximum = 59
         it.allowsInvalid = true
     }
+    
+    // this is the persistent component we can read or write to
     private val configState
         get() = ReminderPersistentStateComponent.instance.state
 
@@ -37,8 +40,10 @@ class ReminderPersistentStateConfigurable : Configurable, NoScroll, Disposable {
     private var minutesField: JTextField? =
         JFormattedTextField(minutesFormatter).also { it.text = configState.reminderMinutes.toString() }
 
+    // providing a title
     override fun getDisplayName(): String = "10bis Plugin Configuration"
 
+    // creating the ui
     override fun createComponent(): JComponent? {
 
 
@@ -66,6 +71,8 @@ class ReminderPersistentStateConfigurable : Configurable, NoScroll, Disposable {
         showRemindersCheckbox = null
     }
 
+    // this tells the preferences window whether to enable or disable the "Apply" button.
+    // so if the user has changed anything - we want to know.
     override fun isModified(): Boolean {
 
         return configState.reminderHour != hourField!!.text.toIntOrNull()
@@ -74,6 +81,7 @@ class ReminderPersistentStateConfigurable : Configurable, NoScroll, Disposable {
                 || configState.showReminders != showRemindersCheckbox!!.isSelected
     }
 
+    // when the user hits "ok" or "apply" we want o update the configurable state
     override fun apply() {
         hourField!!.text.toIntOrNull()?.let {
             if (it in 0..23)
@@ -89,6 +97,7 @@ class ReminderPersistentStateConfigurable : Configurable, NoScroll, Disposable {
         configState.showReminders = showRemindersCheckbox!!.isSelected
     }
 
+    // hitting "reset" shold reset the ui to the latest saved config
     override fun reset() {
         hourField!!.text = configState.reminderHour.toString()
         minutesField!!.text = configState.reminderMinutes.toString()
